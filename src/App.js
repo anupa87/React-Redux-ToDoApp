@@ -1,9 +1,12 @@
 import "./App.css";
+import AddToDo from "./Components/AddToDo";
+import ListToDo from "./Components/ListToDo";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Hello React-Redux</header>
+      <AddToDo />
+      <ListToDo />
     </div>
   );
 }

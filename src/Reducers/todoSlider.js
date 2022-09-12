@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const toDoSlider = createSlice({
-  name: "todoApp",
+  name: "toDoApp",
   initialState: {
-    todoList: [
+    toDoList: [
       {
         id: 0,
         task: "",
@@ -12,19 +12,19 @@ export const toDoSlider = createSlice({
   },
   reducers: {
     addToDo: (state, action) => {
-      let newTodoList = {
+      let newToDoList = {
         id: Math.random(),
         task: action.payload.newTask,
       };
-      state.todoList.push(newTodoList);
+      state.toDoList.push(newToDoList);
     },
     deleteToDo: (state, action) => {
-      let { todoList } = state;
-      state.todoList = todoList.filter((item) => item.id !== action.payload.id);
+      let { toDoList } = state;
+      state.toDoList = toDoList.filter((item) => item.id !== action.payload.id);
     },
     editToDo: (state, action) => {
-      let { todoList } = state;
-      state.todoList = todoList.map((item) =>
+      let { toDoList } = state;
+      state.toDoList = toDoList.map((item) =>
         item.id === action.payload.id ? action.payload : item
       );
     },

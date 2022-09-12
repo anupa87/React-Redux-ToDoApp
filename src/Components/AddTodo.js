@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addToDo } from "../Reducers/todoSlider";
+
+import { addToDo } from "../Reducers/toDoSlider";
 
 const AddToDo = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,6 @@ const AddToDo = () => {
     setState({
       ...state,
       [e.target.name]: e.target.value,
-      [`${e.target.name}Error`]: null,
     });
   };
 
@@ -29,7 +29,7 @@ const AddToDo = () => {
 
   return (
     <div className="form">
-      <h1>React-Redux-ToDO</h1>
+      <h1>React-Redux-ToDo-App</h1>
       <input
         type="text"
         value={task}
@@ -42,4 +42,4 @@ const AddToDo = () => {
     </div>
   );
 };
-export default AddTodo;
+export default AddToDo;
